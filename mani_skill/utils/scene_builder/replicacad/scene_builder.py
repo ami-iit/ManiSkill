@@ -318,6 +318,9 @@ class ReplicaCADSceneBuilder(SceneBuilder):
         if self.env.robot_uids == "fetch":
             self.env.agent.reset(self.env.agent.keyframes["rest"].qpos)
             self.env.agent.robot.set_pose(sapien.Pose([-1, 0, 0.02]))
+        elif self.env.robot_uids == "ergocub":
+            self.env.agent.reset()
+            self.env.agent.robot.set_pose(sapien.Pose([-1, 0, 0.02]))
         else:
             raise NotImplementedError(self.env.robot_uids)
 
