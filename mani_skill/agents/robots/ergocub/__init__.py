@@ -1,0 +1,1 @@
+from .ergocub import ErgoCub
