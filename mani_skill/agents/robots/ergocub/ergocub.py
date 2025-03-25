@@ -13,6 +13,7 @@ from mani_skill.agents.controllers import (
     PDJointPosControllerConfig,
     deepcopy_dict,
 )
+from mani_skill.agents.controllers.pd_base_vel import PDBaseVelControllerConfig
 from mani_skill.agents.registration import register_agent
 from mani_skill.sensors.camera import CameraConfig
 
@@ -320,10 +321,10 @@ class ErgoCub(BaseAgent):
         # -------------------------------------------------------------------------- #
         # Base
         # -------------------------------------------------------------------------- #
-        base_pd_joint_vel = PDBaseForwardVelControllerConfig(
+        base_pd_joint_vel = PDBaseVelControllerConfig(
             self.base_joint_names,
-            lower=[-1, -3.14],
-            upper=[1, 3.14],
+            lower=[-1, -1, -3.14],
+            upper=[1, 1, 3.14],
             damping=1000,
             force_limit=500,
         )
