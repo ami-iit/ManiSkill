@@ -354,7 +354,7 @@ class ErgoCub(BaseAgent):
         return [
             CameraConfig(
                 uid="realsense",
-                pose=sapien.Pose(p=[0, 0, 0], q=[1, 0, 0, 0]),
+                pose=sapien.Pose(p=[0, 0, 0.05], q=[1, 0, 0, 0]),
                 width=640,
                 height=480,
                 fov=np.pi / 2,
